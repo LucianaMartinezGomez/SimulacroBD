@@ -31,14 +31,15 @@ function formatDate(dateStr) {
  */
 function buildRows(sessions) {
   if (!sessions.length) {
-    return `<tr><td colspan="5" style="text-align:center;color:var(--text-muted)">No se encontraron sesiones.</td></tr>`;
+    return `<tr><td colspan="6" style="text-align:center;color:var(--text-muted)">No se encontraron sesiones.</td></tr>`;
   }
   return sessions.map(s => `
     <tr>
       <td>${s.id || s.session_id}</td>
-      <td>${s.training_title || s.titulo || s.training_id || '—'}</td>
+      <td>${s.title || s.titulo || '—'}</td>
+      <td>${s.training_title || s.titulo_entrenamiento || s.training_id || '—'}</td>
       <td>${formatDate(s.session_date || s.fecha_sesion || s.date)}</td>
-      <td>${s.duration_hours || s.duracion_horas || '—'} h</td>
+      <td>${s.duration_minutes || s.duracion_min || '—'} min</td>
       <td>${s.location || s.ubicacion || '—'}</td>
     </tr>
   `).join('');
@@ -109,7 +110,7 @@ export async function renderSessions(container) {
         <table>
           <thead>
             <tr>
-              <th>ID</th><th>Entrenamiento</th><th>Fecha</th>
+              <th>ID</th><th>Título</th><th>Entrenamiento</th><th>Fecha</th>
               <th>Duración</th><th>Ubicación</th>
             </tr>
           </thead>
@@ -127,6 +128,10 @@ export async function renderSessions(container) {
       <form id="session-form">
         <div class="form-grid">
           <div class="form-group">
+            <label for="sess-title">Título de la sesión</label>
+            <input id="sess-title" name="title" type="text" placeholder="Ej: Sesión 1 — Introducción" />
+          </div>
+          <div class="form-group">
             <label for="sess-training">Entrenamiento</label>
             <select id="sess-training" name="training_id" required>
               <option value="">— Seleccionar —</option>
@@ -138,8 +143,8 @@ export async function renderSessions(container) {
             <input id="sess-date" name="session_date" type="date" required />
           </div>
           <div class="form-group">
-            <label for="sess-dur">Duración (horas)</label>
-            <input id="sess-dur" name="duration_hours" type="number" min="1" placeholder="4" />
+            <label for="sess-dur">Duración (minutos)</label>
+            <input id="sess-dur" name="duration_minutes" type="number" min="1" placeholder="60" />
           </div>
           <div class="form-group">
             <label for="sess-loc">Ubicación</label>
@@ -204,10 +209,11 @@ export async function renderSessions(container) {
     formError.innerHTML = '';
 
     const data = {
-      training_id:    Number(form.training_id.value),
-      session_date:   form.session_date.value,
-      duration_hours: Number(form.duration_hours.value) || null,
-      location:       form.location.value.trim(),
+      training_id:      Number(form.training_id.value),
+      title:            form.title.value.trim(),
+      session_date:     form.session_date.value,
+      duration_minutes: Number(form.duration_minutes.value) || null,
+      location:         form.location.value.trim(),
     };
 
     try {
