@@ -34,7 +34,8 @@ CREATE TABLE IF NOT EXISTS trainings (
     start_date      DATE            NOT NULL,
     end_date        DATE            NOT NULL,
     is_active       TINYINT(1)      NOT NULL DEFAULT 1,
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    CONSTRAINT chk_trainings_dates CHECK (end_date >= start_date)
 );
 
 -- =============================================================
@@ -72,6 +73,9 @@ CREATE TABLE IF NOT EXISTS enrollments (
         FOREIGN KEY (training_id) REFERENCES trainings(id)
         ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+-- Índice en status para optimizar consultas frecuentes por estado
+CREATE INDEX idx_enrollments_status ON enrollments(status);
 
 -- =============================================================
 -- TABLA: grades (Calificaciones)
