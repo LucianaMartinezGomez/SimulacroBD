@@ -10,6 +10,6 @@ router.post('/',              ctrl.create);
 router.get('/',               ctrl.getAll);
 
 // Obtener los feedbacks de un empleado específico
-router.get('/:employeeId',    ctrl.getByEmployee);
+router.get('/:empId',    ctrl.getByEmployee);
 
 module.exports = router;

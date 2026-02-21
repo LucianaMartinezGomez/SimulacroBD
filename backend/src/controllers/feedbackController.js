@@ -28,10 +28,11 @@ const getAll = async (req, res) => {
 // Obtiene todos los feedbacks de un empleado específico por su ID
 const getByEmployee = async (req, res) => {
   try {
-    const { employeeId } = req.params;
+    // Obtiene el identificador de empleado desde los parámetros de la ruta
+    const empId = Number(req.params.empId);
 
     // Filtra los documentos por el campo employeeId
-    const feedbacks = await Feedback.find({ employeeId: Number(employeeId) }).sort({ createdAt: -1 });
+    const feedbacks = await Feedback.find({ employeeId: empId }).sort({ createdAt: -1 });
     res.json(feedbacks);
   } catch (error) {
     res.status(500).json({ error: 'Error al obtener feedback del empleado', detail: error.message });

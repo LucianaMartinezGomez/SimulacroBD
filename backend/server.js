@@ -1,8 +1,9 @@
 // Carga las variables de entorno desde el archivo .env
 require('dotenv').config();
 
-const express = require('express');
-const cors    = require('cors');
+const express   = require('express');
+const cors      = require('cors');
+const rateLimit = require('express-rate-limit');
 
 // Importa las conexiones a las bases de datos
 const pool         = require('./src/config/db');
@@ -24,6 +25,16 @@ const PORT = process.env.PORT || 3000;
 
 // Habilita CORS para permitir peticiones desde otros orígenes
 app.use(cors());
+
+// Aplica límite de velocidad global: máximo 100 peticiones por IP cada 15 minutos
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Demasiadas peticiones, intenta de nuevo más tarde.' },
+});
+app.use('/api', limiter);
 
 // Habilita el parseo de cuerpos JSON en las peticiones
 app.use(express.json());

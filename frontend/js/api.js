@@ -96,7 +96,7 @@ export const api = {
   feedback: {
     getAll:        ()     => request('/feedback'),
     create:        (data) => request('/feedback', { method: 'POST', body: data }),
-    getByEmployee: (id)   => request(`/feedback/employee/${id}`),
+    getByEmployee: (id)   => request(`/feedback/${id}`),
   },
 
   // ------ Logs del sistema ------
