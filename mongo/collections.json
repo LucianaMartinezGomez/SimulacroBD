@@ -1,0 +1,162 @@
+{
+  "feedback": [
+    {
+      "employeeId": 101,
+      "trainingId": 1,
+      "comment": "La capacitación fue muy completa y bien estructurada. El instructor explicó cada tema con claridad y paciencia.",
+      "rating": 5,
+      "createdAt": "2026-01-08"
+    },
+    {
+      "employeeId": 204,
+      "trainingId": 2,
+      "comment": "El contenido era relevante para mi puesto, aunque el ritmo fue demasiado rápido en algunos módulos.",
+      "rating": 3,
+      "createdAt": "2026-01-12"
+    },
+    {
+      "employeeId": 315,
+      "trainingId": 1,
+      "comment": "Excelente capacitación. Aprendí herramientas nuevas que ya estoy aplicando en mi trabajo diario.",
+      "rating": 5,
+      "createdAt": "2026-01-15"
+    },
+    {
+      "employeeId": 118,
+      "trainingId": 3,
+      "comment": "El taller práctico fue muy útil, pero faltó más tiempo para ejercicios individuales.",
+      "rating": 4,
+      "createdAt": "2026-01-20"
+    },
+    {
+      "employeeId": 227,
+      "trainingId": 4,
+      "comment": "La sesión sobre liderazgo fue inspiradora. Cambió mi perspectiva sobre la gestión de equipos.",
+      "rating": 5,
+      "createdAt": "2026-01-22"
+    },
+    {
+      "employeeId": 342,
+      "trainingId": 2,
+      "comment": "El material de apoyo estaba desactualizado. Sería bueno revisarlo antes de la próxima edición.",
+      "rating": 2,
+      "createdAt": "2026-01-28"
+    },
+    {
+      "employeeId": 155,
+      "trainingId": 5,
+      "comment": "Muy buena organización y excelente ambiente de aprendizaje. Recomendaría esta capacitación a mis colegas.",
+      "rating": 5,
+      "createdAt": "2026-02-03"
+    },
+    {
+      "employeeId": 263,
+      "trainingId": 3,
+      "comment": "El tema fue interesante pero la duración fue insuficiente para cubrir todos los puntos planteados.",
+      "rating": 3,
+      "createdAt": "2026-02-05"
+    },
+    {
+      "employeeId": 409,
+      "trainingId": 6,
+      "comment": "La capacitación en seguridad informática fue muy necesaria. Me ayudó a identificar riesgos que antes ignoraba.",
+      "rating": 4,
+      "createdAt": "2026-02-10"
+    },
+    {
+      "employeeId": 178,
+      "trainingId": 4,
+      "comment": "El instructor dominaba el tema pero le costó transmitirlo de manera sencilla. Esperaba más ejemplos prácticos.",
+      "rating": 3,
+      "createdAt": "2026-02-12"
+    },
+    {
+      "employeeId": 321,
+      "trainingId": 6,
+      "comment": "Excelente capacitación. El simulacro de incidentes fue la parte más valiosa de todo el curso.",
+      "rating": 5,
+      "createdAt": "2026-02-14"
+    },
+    {
+      "employeeId": 237,
+      "trainingId": 5,
+      "comment": "El contenido fue básico para mi nivel de experiencia, pero agradezco el enfoque práctico que se utilizó.",
+      "rating": 3,
+      "createdAt": "2026-02-18"
+    }
+  ],
+  "logs": [
+    {
+      "action": "CREATE_TRAINING",
+      "user": "admin",
+      "timestamp": "2026-01-02 09:15",
+      "details": "Se creó el entrenamiento 'Introducción a la Ciberseguridad' con duración de 8 horas."
+    },
+    {
+      "action": "CREATE_ENROLLMENT",
+      "user": "sistema",
+      "timestamp": "2026-01-05 10:30",
+      "details": "Se inscribió automáticamente al empleado 101 en el entrenamiento de Ciberseguridad programado para enero."
+    },
+    {
+      "action": "UPDATE_EMPLOYEE",
+      "user": "admin",
+      "timestamp": "2026-01-07 11:00",
+      "details": "Se actualizó el puesto del empleado 204 de 'Analista Junior' a 'Analista Senior'."
+    },
+    {
+      "action": "CREATE_SESSION",
+      "user": "admin",
+      "timestamp": "2026-01-09 08:45",
+      "details": "Se creó la sesión del 15 de enero para el entrenamiento 'Gestión de Equipos de Alto Rendimiento'."
+    },
+    {
+      "action": "DELETE_ENROLLMENT",
+      "user": "admin",
+      "timestamp": "2026-01-11 14:20",
+      "details": "Se canceló la inscripción del empleado 342 por conflicto de horario con otra actividad interna."
+    },
+    {
+      "action": "UPDATE_TRAINING",
+      "user": "coordinador1",
+      "timestamp": "2026-01-14 09:00",
+      "details": "Se actualizó el material de estudio del entrenamiento 'Excel Avanzado' a la versión 2026."
+    },
+    {
+      "action": "CREATE_ENROLLMENT",
+      "user": "sistema",
+      "timestamp": "2026-01-18 07:50",
+      "details": "Inscripción masiva generada para 12 empleados del área de finanzas en el taller de herramientas ofimáticas."
+    },
+    {
+      "action": "DELETE_SESSION",
+      "user": "admin",
+      "timestamp": "2026-01-25 16:30",
+      "details": "Se eliminó la sesión del 30 de enero del entrenamiento 'Comunicación Efectiva' por baja asistencia confirmada."
+    },
+    {
+      "action": "CREATE_TRAINING",
+      "user": "coordinador2",
+      "timestamp": "2026-01-28 10:10",
+      "details": "Se creó el entrenamiento 'Liderazgo Situacional' con tres módulos y evaluación final incluida."
+    },
+    {
+      "action": "UPDATE_SESSION",
+      "user": "admin",
+      "timestamp": "2026-02-01 09:30",
+      "details": "Se reprogramó la sesión del entrenamiento 'Normativa Laboral 2026' del 5 de febrero al 10 de febrero."
+    },
+    {
+      "action": "CREATE_ENROLLMENT",
+      "user": "sistema",
+      "timestamp": "2026-02-04 08:00",
+      "details": "Se inscribió al empleado 409 en el entrenamiento 'Seguridad Informática Avanzada' según plan de desarrollo individual."
+    },
+    {
+      "action": "DELETE_TRAINING",
+      "user": "admin",
+      "timestamp": "2026-02-17 15:45",
+      "details": "Se eliminó el entrenamiento 'Manejo de Crisis' por reasignación de presupuesto para el primer trimestre."
+    }
+  ]
+}
